@@ -12,13 +12,16 @@ public class employeewages {
 		int wh = 8;
 		int htwh = 8;
 		
-		if(att==1)
-			System.out.println("Total full time daily wages = Rs."+ (wph*wh) +"/-");
-		else if(att == 2)
-			System.out.println("Total part-time daily wage = Rs." + (wph*htwh)+"/-");
-		else 
-			System.out.println("Employee is absent");
-		
+		switch(att)
+		{
+			case 1: System.out.println("Total full time daily wages = Rs."+ (wph*wh) +"/-");
+			break;
+			case 2: System.out.println("Total part-time daily wage = Rs." + (wph*htwh)+"/-");
+			break;
+			default: 	System.out.println("Employee is absent"); 
+				
+		}
+				
 
 	}
 }
