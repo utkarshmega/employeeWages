@@ -3,29 +3,44 @@ package com.employeewages;
 import java.util.Random;
 public class employeewages {
 	
+	static int wph = 20;
+	static int wh = 8;
+	static int maxhour = 100;
+	static int maxdays = 20;
+	
 	public static void main(String[] args) {
 		
 		Random rnd = new Random();
 		
-		int wph=20;
-		int wh = 8;
-		int days=0, wages=0, totalwages=0;
-		for(int i=1;i<=20;i++)
+		int days=0, workinghr=0, wages=0, totalwages=0;
+		
+		while(days<=maxdays && workinghr<=maxhour)
 		{
 			int att = rnd.nextInt(2);
-			if(att == 1)
+			if(att==1)
 			{
 				days++;
-				wages = wph * wh;
+				workinghr += wh;
+				if(workinghr>maxhour || days>maxdays)
+				{
+					workinghr = maxhour;
+					days = maxdays;
+					break;
+				}
 			}
-			else {
-				wages = 0;
+			else 
+				days++;
+			if(days>maxdays)
+			{
+				days=maxdays;
+				break;
 			}
-			totalwages += wages ;
+		} 
 			
-		}
+			
 		System.out.println("Total days worked = "+days);
-		System.out.println("Total wage for the month is Rs."+totalwages+"/-");
+		System.out.println("Total working hours = "+workinghr);
+		System.out.println("Total wage for the month is Rs."+ days*workinghr*20 +"/-");
 				
 
 	}
