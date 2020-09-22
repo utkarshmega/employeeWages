@@ -35,7 +35,7 @@ public class employeewages {
 				days=maxdays;
 				break;
 			}
-		}
+		} 
 			
 			
 		System.out.println("Total days worked = "+days);
