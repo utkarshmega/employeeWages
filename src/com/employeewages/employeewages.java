@@ -8,8 +8,8 @@ public class employeewages {
 	static int maxhour = 100;
 	static int maxdays = 20;
 	
-	public static void main(String[] args) {
-		
+	public static void computeWage()
+	{
 		Random rnd = new Random();
 		
 		int days=0, workinghr=0, wages=0, totalwages=0;
@@ -37,11 +37,14 @@ public class employeewages {
 			}
 		} 
 			
-			
 		System.out.println("Total days worked = "+days);
 		System.out.println("Total working hours = "+workinghr);
 		System.out.println("Total wage for the month is Rs."+ days*workinghr*20 +"/-");
-				
+	}
+	
+	public static void main(String[] args) {
+		
+		computeWage();				
 
 	}
 }
