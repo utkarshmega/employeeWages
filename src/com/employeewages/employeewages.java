@@ -3,16 +3,23 @@ package com.employeewages;
 import java.util.Random;
 public class employeewages {
 	
-	static int wph = 20;
-	static int wh = 8;
-	static int maxhour = 100;
-	static int maxdays = 20;
+	int wph = 0;
+	int wh = 0;
+	int maxhour = 0;
+	int maxdays = 0;
 	
-	public static void computeWage()
+	employeewages(int wph, int wh, int maxhour, int maxdays)
+	{
+		this.wph = wph;
+		this.wh = wh;
+		this.maxhour = maxhour;
+		this.maxdays = maxdays;
+	}
+	public void computeWage()
 	{
 		Random rnd = new Random();
 		
-		int days=0, workinghr=0, wages=0, totalwages=0;
+		int days=0, workinghr=0;
 		
 		while(days<=maxdays && workinghr<=maxhour)
 		{
@@ -39,12 +46,7 @@ public class employeewages {
 			
 		System.out.println("Total days worked = "+days);
 		System.out.println("Total working hours = "+workinghr);
-		System.out.println("Total wage for the month is Rs."+ days*workinghr*20 +"/-");
+		System.out.println("Total wage for the month is Rs."+ days*workinghr*wph +"/-");
 	}
 	
-	public static void main(String[] args) {
-		
-		computeWage();				
-
-	}
 }
