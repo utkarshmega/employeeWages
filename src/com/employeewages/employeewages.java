@@ -15,7 +15,7 @@ public class employeewages {
 		this.maxhour = maxhour;
 		this.maxdays = maxdays;
 	}
-	public void computeWage()
+	public int computeWage()
 	{
 		Random rnd = new Random();
 		
@@ -43,10 +43,12 @@ public class employeewages {
 				break;
 			}
 		} 
+		
+		return days*workinghr*wph;
 			
-		System.out.println("Total days worked = "+days);
-		System.out.println("Total working hours = "+workinghr);
-		System.out.println("Total wage for the month is Rs."+ days*workinghr*wph +"/-");
+//		System.out.println("Total days worked = "+days);
+//		System.out.println("Total working hours = "+workinghr);
+//		System.out.println("Total wage for the month is Rs."+  +"/-");
 	}
 	
 }
