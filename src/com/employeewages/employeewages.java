@@ -43,7 +43,6 @@ public class employeewages {
 				break;
 			}
 		} 
-		
 		return days*workinghr*wph;
 			
 //		System.out.println("Total days worked = "+days);

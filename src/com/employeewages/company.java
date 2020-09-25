@@ -14,17 +14,17 @@ public class company extends employeewages implements employeeinterface {
 		
 		System.out.println("Enter the number of companies");
 		int co = sc.nextInt();
-		String[] coName = new String[co];
-		int[] noofemp = new int[co];
-		int [] totalwages = new int[co];
+		ArrayList<String> coName = new ArrayList<>(co);
+		ArrayList<Integer> noofemp = new ArrayList<>(co);
+		ArrayList<Integer> totalwages = new ArrayList<>(co);
 		
 		for(int i=0;i<co;i++)
 		{
 			System.out.println("Enter the company name");
-			coName[i] = sc.next();
+			coName.add(sc.nextLine());
 			sc.nextLine();
 			System.out.println("Enter the number of employees in the company");
-			noofemp[i] = sc.nextInt();
+			noofemp.add(sc.nextInt());
 		}
 		employeewages e = new employeewages(20, 8, 100, 20);
 //		
@@ -39,16 +39,16 @@ public class company extends employeewages implements employeeinterface {
 		for(int i=0;i<co;i++)
 		{
 			int temp = 0;
-			for(int j=1;j<=noofemp[i];j++)
+			for(int j=1;j<=noofemp.get(i);j++)
 				temp += e.computeWage();
 			
-			totalwages[i] = temp;
+			totalwages.add(temp);
 				
 		}
 		for(int i=0;i<co;i++)
 		{
-			System.out.println("Company name = "+coName[i]);
-			System.out.println("Total wages per month for the company is Rs."+totalwages[i]);
+			System.out.println("Company name = "+coName.get(i));
+			System.out.println("Total wages per month for the company is Rs."+totalwages.get(i));
 		}		
 		
 		sc.close();
