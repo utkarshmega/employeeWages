@@ -2,7 +2,7 @@ package com.employeewages;
 
 public interface employeeinterface {
 	
-	int computeWage();
+	int computeWage(); 
 	
 
 }

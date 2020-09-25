@@ -3,8 +3,8 @@ package com.employeewages;
 import java.util.*;
 public class company extends employeewages implements employeeinterface {
 	
-	company(int wph, int wh, int maxhour, int maxdays) {
-		super(wph, wh, maxhour, maxdays);
+	company(int wph, int wh, int maxhour, int maxdays, int noofco) {
+		super(wph, wh, maxhour, maxdays, noofco);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -17,16 +17,16 @@ public class company extends employeewages implements employeeinterface {
 		ArrayList<String> coName = new ArrayList<>(co);
 		ArrayList<Integer> noofemp = new ArrayList<>(co);
 		ArrayList<Integer> totalwages = new ArrayList<>(co);
-		
+		int perdaywage[][] = new int[co][20];
 		for(int i=0;i<co;i++)
 		{
 			System.out.println("Enter the company name");
-			coName.add(sc.nextLine());
+			coName.add(sc.next());
 			sc.nextLine();
 			System.out.println("Enter the number of employees in the company");
 			noofemp.add(sc.nextInt());
 		}
-		employeewages e = new employeewages(20, 8, 100, 20);
+		employeewages e = new employeewages(20, 8, 100, 20, co);
 //		
 //		System.out.println("Enter the wages per hour");
 //		int wph = sc.nextInt();
@@ -47,7 +47,14 @@ public class company extends employeewages implements employeeinterface {
 		}
 		for(int i=0;i<co;i++)
 		{
+			for(int j=0;j<20;j++)
+				perdaywage[i][j] = arr[j];
+		}
+		for(int i=0;i<co;i++)
+		{
 			System.out.println("Company name = "+coName.get(i));
+			for(int j=0;j<20;j++)
+				System.out.println("Wages on day "+(j+1) + " is "+perdaywage[i][j]);
 			System.out.println("Total wages per month for the company is Rs."+totalwages.get(i));
 		}		
 		
