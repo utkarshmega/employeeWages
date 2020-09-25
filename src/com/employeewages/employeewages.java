@@ -7,19 +7,16 @@ public class employeewages {
 	int wh = 0;
 	int maxhour = 0;
 	int maxdays = 0;
-	int noofco = 0;
-	static int arr[];
-	employeewages(int wph, int wh, int maxhour, int maxdays, int noofco)
+	
+	employeewages(int wph, int wh, int maxhour, int maxdays)
 	{
 		this.wph = wph;
 		this.wh = wh;
 		this.maxhour = maxhour;
 		this.maxdays = maxdays;
-		this.noofco = noofco;
 	}
 	public int computeWage()
 	{
-		arr = new int[20];
 		Random rnd = new Random();
 		
 		int days=0, workinghr=0;
@@ -31,8 +28,6 @@ public class employeewages {
 			{
 				days++;
 				int tmp = wh * wph;
-				if(days<21)
-					arr[days-1] = arr[days-1] + tmp;
 				workinghr += wh;
 				if(workinghr>maxhour || days>maxdays)
 				{

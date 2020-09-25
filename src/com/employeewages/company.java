@@ -3,8 +3,8 @@ package com.employeewages;
 import java.util.*;
 public class company extends employeewages implements employeeinterface {
 	
-	company(int wph, int wh, int maxhour, int maxdays, int noofco) {
-		super(wph, wh, maxhour, maxdays, noofco);
+	company(int wph, int wh, int maxhour, int maxdays) {
+		super(wph, wh, maxhour, maxdays);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -17,7 +17,6 @@ public class company extends employeewages implements employeeinterface {
 		ArrayList<String> coName = new ArrayList<>(co);
 		ArrayList<Integer> noofemp = new ArrayList<>(co);
 		ArrayList<Integer> totalwages = new ArrayList<>(co);
-		int perdaywage[][] = new int[co][20];
 		for(int i=0;i<co;i++)
 		{
 			System.out.println("Enter the company name");
@@ -26,7 +25,7 @@ public class company extends employeewages implements employeeinterface {
 			System.out.println("Enter the number of employees in the company");
 			noofemp.add(sc.nextInt());
 		}
-		employeewages e = new employeewages(20, 8, 100, 20, co);
+		employeewages e = new employeewages(20, 8, 100, 20);
 //		
 //		System.out.println("Enter the wages per hour");
 //		int wph = sc.nextInt();
@@ -43,20 +42,23 @@ public class company extends employeewages implements employeeinterface {
 				temp += e.computeWage();
 			
 			totalwages.add(temp);
-				
+			
 		}
-		for(int i=0;i<co;i++)
+		int t;
+		System.out.println("Enter 1 to enquire or 0 to exit");
+		t = sc.nextInt();
+		while(t!=0)
 		{
-			for(int j=0;j<20;j++)
-				perdaywage[i][j] = arr[j];
+			System.out.println("Enter the company name");
+			String str = sc.next();
+			int i;
+			for(i=0;i<co;i++)
+				if(coName.get(i).equalsIgnoreCase(str))
+					break;
+			System.out.println("Total monthly wage for the company is "+totalwages.get(i));
+			System.out.println("Enter 1 to enquire or 0 to exit");
+			t = sc.nextInt();
 		}
-		for(int i=0;i<co;i++)
-		{
-			System.out.println("Company name = "+coName.get(i));
-			for(int j=0;j<20;j++)
-				System.out.println("Wages on day "+(j+1) + " is "+perdaywage[i][j]);
-			System.out.println("Total wages per month for the company is Rs."+totalwages.get(i));
-		}		
 		
 		sc.close();
 	}
