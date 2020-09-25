@@ -37,7 +37,7 @@ public class employeewages {
 			}
 			else 
 				days++;
-			if(days>maxdays)
+			if(days> maxdays)
 			{
 				days=maxdays;
 				break;

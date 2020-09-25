@@ -48,7 +48,7 @@ public class company extends employeewages {
 		for(int i=0;i<co;i++)
 		{
 			System.out.println("Company name = "+coName[i]);
-			System.out.println("Total wages for the company is Rs."+totalwages[i]);
+			System.out.println("Total wages per month for the company is Rs."+totalwages[i]);
 		}		
 		
 		sc.close();
