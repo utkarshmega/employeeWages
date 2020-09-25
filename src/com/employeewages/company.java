@@ -1,7 +1,7 @@
 package com.employeewages;
 
 import java.util.*;
-public class company extends employeewages {
+public class company extends employeewages implements employeeinterface {
 	
 	company(int wph, int wh, int maxhour, int maxdays) {
 		super(wph, wh, maxhour, maxdays);

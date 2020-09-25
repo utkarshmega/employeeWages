@@ -3,7 +3,7 @@ package com.employeewages;
 import java.util.Random;
 public class employeewages {
 	
-	int wph = 0;
+	int wph = 0 ;
 	int wh = 0;
 	int maxhour = 0;
 	int maxdays = 0;
